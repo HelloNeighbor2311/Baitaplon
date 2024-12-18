@@ -16,13 +16,18 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   DanhMuc.init({
+    CategoryID: {
+      type: DataTypes.INTEGER,
+      primaryKey: true, // Khóa chính của bảng
+      autoIncrement: true,
+    },
     CategoryName: DataTypes.STRING,
-    Image: DataTypes.TEXT
+    Image: DataTypes.TEXT,
   }, {
     sequelize,
     modelName: 'DanhMuc',
-    tableName: 'DanhMuc',
-    underscored: true
+    tableName: 'danhmuc',
+    timestamps: false,
   });
   return DanhMuc;
 };

@@ -28,7 +28,8 @@ module.exports = (sequelize, DataTypes) => {
     Price: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'chitietdonhang',
+    modelName: 'ChiTietDonHang',
+    tableName: 'chitietdonhang',
   });
   return ChiTietDonHang;
 };

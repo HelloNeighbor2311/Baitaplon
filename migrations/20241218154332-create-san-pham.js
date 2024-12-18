@@ -24,16 +24,19 @@ module.exports = {
         },
       },
       ProductName: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       Image: {
         type: Sequelize.TEXT
       },
       Quantity: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
       },
       Price: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
       },
       Stack: {
         type: Sequelize.INTEGER

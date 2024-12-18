@@ -22,9 +22,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   SanPham.init({
+    ProductID: {
+      type: DataTypes.INTEGER,
+      primaryKey: true, // Đặt ProductID làm khóa chính
+      autoIncrement: true, // Nếu bảng hỗ trợ auto-increment
+    },
+    ProductName: DataTypes.STRING,
     StoreID: DataTypes.INTEGER,
     CategoryID: DataTypes.INTEGER,
-    ProductName: DataTypes.STRING,
     Image: DataTypes.TEXT,
     Quantity: DataTypes.INTEGER,
     Price: DataTypes.INTEGER,
@@ -34,6 +39,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'SanPham',
+    tableName: 'sanpham',
   });
   return SanPham;
 };

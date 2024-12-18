@@ -19,6 +19,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   CuaHang.init({
+    StoreID: {
+      type: DataTypes.INTEGER,
+      primaryKey: true, // Khóa chính của bảng
+      autoIncrement: true,
+    },
     StoreName: DataTypes.STRING,
     Image: DataTypes.TEXT,
     PhoneNumber: DataTypes.INTEGER,
@@ -27,6 +32,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'CuaHang',
+    tableName: 'cuahang',
+    timestamps: false,
   });
   return CuaHang;
 };
