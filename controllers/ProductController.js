@@ -3,8 +3,10 @@ import db from "../models"
 import InsertProducRequest from "../DataTransferObjects/requests/InsertProducRequest"
 
 export async function getProduct(req, res) {
+    // const products = await db.SanPham.findAll()
     res.status(200).json({
-        message: "Lay danh sach san pham thanh cong!"
+        message: "Lay danh sach san pham thanh cong!",
+        // data: products
     })
 }
 
@@ -18,7 +20,8 @@ export async function getProductById(req, res) {
     }
     
     res.status(200).json({
-        message: "Lay thong tin san pham thanh cong"
+        message: "Lay thong tin san pham thanh cong",
+        data: product
     })
 }
 

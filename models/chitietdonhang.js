@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'StoreID'   
       })
       ChiTietDonHang.belongsTo(models.DichVu,{
-        foreignKey: 'StoreID'   
+        foreignKey: 'ServiceID'   
       })
     }
   }
