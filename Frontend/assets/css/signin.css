@@ -1,0 +1,135 @@
+.app {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  background-color: #f1f1f1;
+}
+
+.signup-container {
+  position: relative;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  background-color: #fff;
+  padding-bottom: 10px;
+  width: 1000px;
+  height: 500px;
+  border-radius: 20px;
+  box-shadow: 1px 6px 10px rgb(108, 104, 104);
+  background: linear-gradient(to right, #1EA1FF, #76EEF6, #fff4FB);
+}
+
+.signup-container::after {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: -57px;
+  background-image: url(../img/logo.png);
+  width: 249px;
+  height: 155px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.signup__img {
+  width: 350px;
+  height: 233px;
+  border-radius: 90px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  left: 40px;
+}
+
+.signup-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.signup-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.text {
+  height: max-content;
+  font-size: 36px;
+  font-weight: 700;
+  background: -webkit-linear-gradient(#161414, #1EA1FF);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.inputs {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 400px;
+  height: 40px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-bottom: 2px solid;
+}
+
+.input input {
+  height: 50px;
+  width: 400px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 19px;
+}
+
+.create-account {
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: black;
+  cursor: pointer;
+  /* text-decoration: none; */
+}
+
+.have-account:hover {
+  opacity: 0.6;
+}
+
+.submit-container {
+  display: flex;
+  gap: 30px;
+  margin: 40px auto;
+  margin-bottom: 20px;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 185px;
+  height: 45px;
+  color: #fff;
+  background: linear-gradient(#62a6f9, #0b0193);
+  border-radius: 50px;
+  font-size: 19px;
+  font-weight: 700;
+  cursor: pointer;
+}
