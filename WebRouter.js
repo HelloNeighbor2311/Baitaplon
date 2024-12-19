@@ -4,14 +4,19 @@ import * as CategoryController from "./controllers/CategoryController";
 import * as OrderController from "./controllers/OrderController";
 import * as OrderDetailController from "./controllers/OrderDetailController";
 import * as ShopController from "./controllers/ShopController";
-
+import asyncHandler from "./middlewares/asyncHandler";
+import validate from "./middlewares/validate";
+import InsertProducRequest from "./DataTransferObjects/requests/InsertProducRequest";
 
 const router = express.Router();
 export function AppRouter(app) {
-    //Product Route
+    //Product Route (sau nay them validate voi asyncHandler cho cac route)
     router.get('/products', ProductController.getProduct);
     router.get('/products/:id', ProductController.getProductById);
-    router.post('/products', ProductController.insertProduct);
+    router.post('/products', 
+        validate(InsertProducRequest),
+        asyncHandler(ProductController.insertProduct)
+    );
     router.put('/products', ProductController.updateProduct);
     router.delete('/products/:id', ProductController.deleateProduct);
 
