@@ -19,12 +19,16 @@ module.exports = (sequelize, DataTypes) => {
       ChiTietDonHang.belongsTo(models.CuaHang,{
         foreignKey: 'StoreID'   
       })
+      ChiTietDonHang.belongsTo(models.DichVu,{
+        foreignKey: 'StoreID'   
+      })
     }
   }
   ChiTietDonHang.init({
     OrderID: DataTypes.INTEGER,
     ProductID: DataTypes.INTEGER,
     StoreID: DataTypes.INTEGER,
+    ServiceID: DataTypes.INTEGER,
     Price: DataTypes.INTEGER
   }, {
     sequelize,

@@ -16,6 +16,9 @@ module.exports = (sequelize, DataTypes) => {
       CuaHang.hasMany(models.ChiTietDonHang,{
         foreignKey: 'StoreID'
       })
+      CuaHang.hasMany(models.DichVu,{
+        foreignKey: 'StoreID'
+      })
     }
   }
   CuaHang.init({
