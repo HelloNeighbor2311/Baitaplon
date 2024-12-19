@@ -13,6 +13,9 @@ module.exports = (sequelize, DataTypes) => {
       DanhMuc.hasMany(models.SanPham,{
         foreignKey: 'CategoryID'
       })
+      DanhMuc.hasMany(models.DichVu,{
+        foreignKey: 'CategoryID'
+      })
     }
   }
   DanhMuc.init({

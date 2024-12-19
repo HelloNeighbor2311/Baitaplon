@@ -7,6 +7,8 @@ import * as ShopController from "./controllers/ShopController";
 import asyncHandler from "./middlewares/asyncHandler";
 import validate from "./middlewares/validate";
 import InsertProducRequest from "./DataTransferObjects/requests/InsertProducRequest";
+import * as ServiceController from "./controllers/ServiceController";
+
 
 const router = express.Router();
 export function AppRouter(app) {
@@ -47,6 +49,13 @@ export function AppRouter(app) {
     router.post('/shops', ShopController.insertShop);
     router.put('/shops', ShopController.updateShop);
     router.delete('/shops/:id', ShopController.deleateShop);
+
+    //Service route
+    router.get('/services', ServiceController.getServices);
+    router.get('/services/:id', ServiceController.getServiceById);
+    router.post('/services', ServiceController.insertService);
+    router.put('/services', ServiceController.updateService);
+    router.delete('/services/:id', ServiceController.deleateService);
 
     app.use('/api/', router);
 }

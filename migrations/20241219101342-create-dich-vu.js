@@ -2,43 +2,45 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('ChiTietDonHang', {
-      ProductDetailID: {
+    await queryInterface.createTable('DichVu', {
+      ServiceID: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      OrderID: {
-        type: Sequelize.INTEGER,
-        references:{
-          model: 'DonHang',
-          key: 'OrderID',
-        },
-      },
-      ProductID: {
-        type: Sequelize.INTEGER,
-        references:{
-          model: 'SanPham',
-          key: 'ProductID',
-        },
-      },
       StoreID: {
+        allowNull: false,
         type: Sequelize.INTEGER,
         references:{
           model: 'CuaHang',
           key: 'StoreID',
         },
       },
-      ServiceID: {
+      CategoryID: {
+        allowNull: false,
         type: Sequelize.INTEGER,
         references:{
-          model: 'DichVu',
-          key: 'ServiceID',
+          model: 'DanhMuc',
+          key: 'CategoryID',
         },
       },
-      Price: {
+      ServiceName: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      ServicePrice: {
+        allowNull: false,
         type: Sequelize.INTEGER
+      },
+      Rate: {
+        type: Sequelize.INTEGER
+      },
+      Description: {
+        type: Sequelize.STRING
+      },
+      Image: {
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,
@@ -51,6 +53,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('ChiTietDonHang');
+    await queryInterface.dropTable('DichVu');
   }
 };
