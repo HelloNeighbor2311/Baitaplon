@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopPet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/cart.css">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.7.1-web/css/all.min.css">
+    <link rel="stylesheet" href="./assets/fonts/uicons-regular-rounded/css/uicons-regular-rounded.css">
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-straight/css/uicons-thin-straight.css'>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,0,0&icon_names=menu" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Coiny&family=Just+Me+Again+Down+Here&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="app">
+        <!-- Begin: Header -->
+        <header class="header">
+            <div class="wrap">
+                <a class="header__logo" href="">
+                    <div class="header__logo-img" style="background-image: url(./assets/img/logo.png);"></div>
+                </a>
+
+                <!-- Chưa đăng nhập -->
+                <!-- <div class="header__action">
+                    <a href="./signin.html" class="header__signin">Đăng ký</a>
+                    <a href="./login.html" class="header__login">Đăng nhập</a>
+                </div> -->
+
+                <!-- Đã đăng nhập -->
+                <div class="header__navbar">
+
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item">
+                            <div class="header__user">
+                                <a class="header__navbar-icon-link">
+                                    <i class="header__navbar-icon fi fi-ts-circle-user"></i>
+                                </a>
+                                <ul class="header__user-menu">
+                                    <li class="header__user-item">
+                                        <a href="">Thông tin cá nhân</a>
+                                    </li>
+                                    <li class="header__user-item">
+                                        <a href="">Chỉnh sửa hồ sơ</a>
+                                    </li>
+                                    <li class="header__user-item header__user-item--separate">
+                                        <a href="">Đăng xuất</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="header__navbar-item">
+                            <div class="header__cart">
+                                <div class="header__cart-wrap">
+                                    <i class="header__navbar-icon fi fi-ts-cart-shopping-fast"></i>
+
+
+                                    <!-- No cart:  header__cart-list--no-cart -->
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="header__navbar-item">
+                            <div class="header__menu">
+                                <a class="header__navbar-icon-link">
+                                    <i class="header__navbar-icon fi fi-tr-bars-sort"></i>
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <!-- End: Header -->
+
+        <!-- Begin: Container -->
+        <div class="app__container">
+            <span class="cart__product">Sản phẩm</span>
+            <span class="cart__price">Giá</span>
+            <span class="cart__Quantity">Số lượng</span>
+            <span class="cart__action">Thao tác</span>
+            <div class="cart-cb-wrap">
+                <input type="checkbox" id="cart-cb-1" class="cart-cb">
+                <label for="cart-cb-1" class="cart-cb__label">
+                    <div class="cart-cb__img" style="background-image: url(./assets/img/pet2.png)"></div>
+                    <span class="cart-cb__label-name">Alaska đực tai cụp</span>
+                    <span class="cart-cb__label-price">21.000.000đ</span>
+                    <div class="quantity-container" id="quantity-selector-1">
+                        <button class="quantity-button decrease">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-button increase">+</button>
+                      </div>
+                    <div class="remove_item">
+                        <button class="remove_item-btn">Xoá</button>
+                    </div>
+                </label>
+            </div>
+            <div class="cart-cb-wrap">
+                <input type="checkbox" id="cart-cb-2" class="cart-cb">
+                <label for="cart-cb-2" class="cart-cb__label">
+                    <div class="cart-cb__img" style="background-image: url(./assets/img/pet2.png)"></div>
+                    <span class="cart-cb__label-name">Alaska đực tai cụp</span>
+                    <span class="cart-cb__label-price">21.000.000đ</span>
+                    <div class="quantity-container" id="quantity-selector-2">
+                        <button class="quantity-button decrease">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-button increase">+</button>
+                      </div>
+                    <div class="remove_item">
+                        <button class="remove_item-btn">Xoá</button>
+                    </div>
+                </label>
+            </div>
+            <div class="cart-cb-wrap">
+                <input type="checkbox" id="cart-cb-3" class="cart-cb">
+                <label for="cart-cb-3" class="cart-cb__label">
+                    <div class="cart-cb__img" style="background-image: url(./assets/img/pet2.png)"></div>
+                    <span class="cart-cb__label-name">Alaska đực tai cụp</span>
+                    <span class="cart-cb__label-price">21.000.000đ</span>
+                    <div class="quantity-container" id="quantity-selector-3">
+                        <button class="quantity-button decrease">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-button increase">+</button>
+                      </div>
+                    <div class="remove_item">
+                        <button class="remove_item-btn">Xoá</button>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer__wrap">
+                <div class="footer__input-wrap">
+                    <input type="checkbox" id="cart-cb-all" class="cart-cb-all">
+                    <label for="cart-cb-all" class="cart-cb-all__label">Chọn tất cả</label>
+                </div>
+                <span class="cart__total-price">Tổng giá: xxx.xxx.xxxđ</span>
+                <span class="cart__total-quantity">Số lượng: x</span>
+                <button class="cart__buy-btn">Mua</button>
+            </div>
+        </footer>
+    </div>
+    
+
+    <script src="./assets/scripts/cart.js"></script>
+
+</body>
+
+</html>
