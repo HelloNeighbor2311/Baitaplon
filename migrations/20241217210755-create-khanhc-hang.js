@@ -30,10 +30,12 @@ module.exports = {
         allowNull: false,
       },
       RegisterDate: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: false,
       },
       UpdateDate: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: false,
       }
     });
   },

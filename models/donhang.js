@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   DonHang.init({
     CustomerID: DataTypes.INTEGER,
-    Total: DataTypes.INTEGER
+    Status: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'DonHang',
