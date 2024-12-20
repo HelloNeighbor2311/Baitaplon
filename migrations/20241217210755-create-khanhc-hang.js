@@ -25,6 +25,10 @@ module.exports = {
       Avatar: {
         type: Sequelize.STRING
       },
+      CustomerAddress: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       PhoneNumber: {
         type: Sequelize.INTEGER,
         allowNull: false,
