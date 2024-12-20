@@ -505,3 +505,93 @@ body {
     font-weight: 700;
     margin-right: 20px;
 }
+
+/* Pay */
+.pay__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.pay {
+    position: absolute;
+    width: 882px;
+    height: 471px;
+    background-color: var(--white-color);
+}
+
+.pay__text {
+    width: 100%;
+    font-size: 2rem;
+    padding: 40px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.pay-item {
+    max-width: 300px;
+    max-height: 70px;
+    height: 54px;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+    margin-left: 70px;
+    margin-bottom:40px;
+    padding-left: 16px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.pay-item:hover {
+    cursor: pointer;
+    background-color: #d5d5d5;
+}
+
+
+.pay-item__logo {
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.pay-item__logo--vietqr {
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.pay-item__name {
+    font-size: 1.8rem;
+    margin-left: 16px;
+    font-weight: 400;
+}
+
+.confirm__btn-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.comfirm__btn {
+    width: 120px;
+    height: 32px;
+    background-color: #96B9F2;
+    margin-top: 120px;
+    border: none;
+    font-size: 1.6rem;
+}
+
+.comfirm__btn:hover {
+    opacity: 0.7;
+}
+
