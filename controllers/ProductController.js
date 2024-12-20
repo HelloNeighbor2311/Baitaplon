@@ -26,12 +26,11 @@ export async function getProductById(req, res) {
 }
 
 export async function insertProduct(req, res) {
-        // console.log(JSON.stringify(req.body))
-        const product = await db.SanPham.create(req.body)
-        return res.status(201).json({
-            message: "Them san pham thanh cong",
-            data: product
-        })
+    const product = await db.SanPham.create(req.body)
+    return res.status(201).json({
+        message: "Them san pham thanh cong",
+        data: product
+    })
 }
 
 export async function deleateProduct(req, res) {

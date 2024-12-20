@@ -11,8 +11,10 @@ export async function getOrderById(req, res) {
 }
 
 export async function insertOrder(req, res) {
-    res.status(200).json({
-        message: "Them don hang thanh cong"
+    const service = await db.DichVu.create(req.body)
+    return res.status(201).json({
+        message: "Them dich vu thanh cong",
+        data: service
     })
 }
 

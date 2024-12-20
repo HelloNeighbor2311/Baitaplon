@@ -14,20 +14,11 @@ export async function getShopById(req, res) {
 }
 
 export async function insertShop(req, res) {
-    try {
-            // console.log(JSON.stringify(req.body))
-            const product = await db.CuaHang.create(req.body)
-            res.status(201).json({
-                message: "Them cua hang thanh cong",
-                data: product
-            })
-        }
-        catch (error) {
-            res.status(500).json({
-                message: "Them cua hang that bai",
-                error: error.message
-            })
-        }
+    const cuahang = await db.CuaHang.create(req.body)
+    res.status(201).json({
+        message: "Them cua hang thanh cong",
+        data: cuahang
+    })
 }
 
 export async function deleateShop(req, res) {

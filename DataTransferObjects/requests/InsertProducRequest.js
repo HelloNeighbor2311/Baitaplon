@@ -8,7 +8,6 @@ class InsertProducRequest {
         this.Image = data.Image;
         this.Quantity = data.Quantity;
         this.Price = data.Price;
-        this.Stack = data.Stack;
         this.Rate = data.Rate;
         this.Description = data.Description;
     }
@@ -20,7 +19,6 @@ class InsertProducRequest {
             Image: Joi.string().uri().allow(""),
             Quantity: Joi.number().integer().min(0).required(),
             Price: Joi.number().positive().required(),
-            Stack: Joi.number().positive().min(0),
             Rate: Joi.number().positive().min(0).max(5),
             Description: Joi.string().optional()
         });

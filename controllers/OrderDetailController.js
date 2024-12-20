@@ -11,8 +11,10 @@ export async function getOrderDetailById(req, res) {
 }
 
 export async function insertOrderDetail(req, res) {
-    res.status(200).json({
-        message: "Them chi tiet san pham thanh cong"
+    const service = await db.DichVu.create(req.body)
+    return res.status(201).json({
+        message: "Them dich vu thanh cong",
+        data: service
     })
 }
 

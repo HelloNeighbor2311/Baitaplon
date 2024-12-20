@@ -14,20 +14,11 @@ export async function getCategoryById(req, res) {
 }
 
 export async function insertCategory(req, res) {
-    try {
-            // console.log(JSON.stringify(req.body))
-            const product = await db.DanhMuc.create(req.body)
-            res.status(201).json({
-                message: "Them danh muc thanh cong",
-                data: product
-            })
-        }
-        catch (error) {
-            res.status(500).json({
-                message: "Them danh muc that bai",
-                error: error.message
-            })
-        } 
+    const product = await db.DanhMuc.create(req.body)
+    res.status(201).json({
+        message: "Them danh muc thanh cong",
+        data: product
+    })
 }
 
 export async function deleateCategory(req, res) {
