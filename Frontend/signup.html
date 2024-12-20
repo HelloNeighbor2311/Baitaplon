@@ -7,7 +7,7 @@
   <title>ShopPet</title>
   <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.7.1-web/css/all.min.css">
   <link rel="stylesheet" href="./assets/css/login-base.css">
-  <link rel="stylesheet" href="./assets/css/login.css">
+  <link rel="stylesheet" href="./assets/css/signup.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -20,11 +20,14 @@
     <a href="./index.html" class="back-home-page">
       <i class="back-home-page__icon fa-solid fa-arrow-left"></i>
     </a>
-    <div class="login-container">
-      <div class="login-wrap">
-        <form action="" method="POST" class="form" id="form-2">
-          <div class="login-header">
-            <div class="text">Login</div>
+    <div class="signup-container">
+      <div class="signup__img-wrap">
+        <div class="signup__img" style="background-image: url(./assets/img/meo_beo.jpg);"></div>
+      </div>
+      <div class="signup-wrap">
+        <form action="" method="POST" class="form" id="form-1">
+          <div class="signup-header">
+            <div class="text">Sign Up</div>
           </div>
           <div class="inputs">
             <div class="input">
@@ -35,16 +38,18 @@
               <input id="password" name="password" type="password" placeholder="Password" />
               <span class="i-message"></span>
             </div>
+            <div class="input">
+              <input id="password_confirm" name="password_confirm" type="password" placeholder="Confirm Password" />
+              <span class="i-message"></span>
+            </div>
           </div>
           <div class="submit-container">
-            <a href="./signed.html" class="submit">Login</a>
+            <div class="submit">Sign Up</div>
           </div>
-          <div class="have-account"> Chưa có tài khoản? <a class="create-account" href="./signup.html">Đăng Kí ngay</a> </div>
+          <a href="./login.html" class="have-account"> Already have an account ?</a>
         </form>
       </div>
-      <div class="login__img-wrap">
-        <div class="login__img" style="background-image: url(./assets/img/meo_beo.jpg);"></div>
-      </div>
+      
     </div>
   </div>
 
@@ -54,18 +59,38 @@
     document.addEventListener('DOMContentLoaded', function () {
       // Mong muốn của chúng ta
       Validator({
-        form: '#form-2',
+        form: '#form-1',
         formGroupSelector: '.input',
         errorSelector: '.i-message',
         rules: [
           Validator.isEmail('#email'),
           Validator.minLength('#password', 6),
-        ]
+          Validator.isRequired('#password_confirm'),
+          Validator.isConfirmed('#password_confirm', function () {
+            return document.querySelector('#form-1 #password').value;
+          }, 'Mật khẩu nhập lại không chính xác')
+        ],
+        onSubmit: function (data) {
+          // Call API
+          console.log(data);
+        }
       });
+
+
+      // Validator({
+      //   form: '#form-2',
+      //   formGroupSelector: '.form-group',
+      //   errorSelector: '.form-message',
+      //   rules: [
+      //     Validator.isEmail('#email'),
+      //     Validator.minLength('#password', 6),
+      //   ],
+      //   onSubmit: function (data) {
+      //     // Call API
+      //     console.log(data);
+      //   }
+      // });
     });
 
   </script>
-
-
-
 </body>

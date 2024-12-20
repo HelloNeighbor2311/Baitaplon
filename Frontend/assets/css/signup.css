@@ -3,10 +3,9 @@
   align-items: center;
   height: 100vh;
   background-color: #f1f1f1;
-  position: relative;
 }
 
-.login-container {
+.signup-container {
   position: relative;
   display: flex;
   /* flex-direction: column; */
@@ -22,7 +21,7 @@
   background: linear-gradient(to right, #1EA1FF, #76EEF6, #fff4FB);
 }
 
-.login-container::after {
+.signup-container::after {
   content: "";
   position: absolute;
   top: -16px;
@@ -36,7 +35,7 @@
   z-index: 1;
 }
 
-.login__img {
+.signup__img {
   width: 350px;
   height: 233px;
   border-radius: 90px;
@@ -44,10 +43,10 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  left: -40px;
+  left: 40px;
 }
 
-.login-wrap {
+.signup-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,7 +54,7 @@
   margin-top: 30px;
 }
 
-.login-header {
+.signup-header {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,7 +104,7 @@
 
 .i-message {
   margin-top: 15px;
-  margin-bottom: 10px;  
+  margin-bottom: 10px;
   text-align: left;
   font-size: 1rem;
   line-height: 1.2rem;
@@ -114,19 +113,16 @@
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
-.have-account {
+.create-account {
   font-size: 16px;
   margin-top: 10px;
   margin-bottom: 20px;
   color: black;
   cursor: pointer;
+  /* text-decoration: none; */
 }
 
-.create-account {
-  color: #000;
-}
-
-.create-account:hover {
+.have-account:hover {
   opacity: 0.6;
 }
 
@@ -150,3 +146,4 @@
   font-weight: 700;
   cursor: pointer;
 }
+
