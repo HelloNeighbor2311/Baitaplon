@@ -23,8 +23,9 @@ class InsertProducRequest {
             Stack: Joi.number().positive().min(0),
             Rate: Joi.number().positive().min(0).max(5),
             Description: Joi.string().optional()
-        
-        })
+        });
+
+        return schema.validate(data);
     }
 }
 

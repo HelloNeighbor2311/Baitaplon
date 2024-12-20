@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'StoreID'   
       })
       ChiTietDonHang.belongsTo(models.DichVu,{
-        foreignKey: 'StoreID'   
+        foreignKey: 'ServiceID'   
       })
     }
   }
@@ -29,11 +29,13 @@ module.exports = (sequelize, DataTypes) => {
     ProductID: DataTypes.INTEGER,
     StoreID: DataTypes.INTEGER,
     ServiceID: DataTypes.INTEGER,
+    Quantity: DataTypes.INTEGER,
     Price: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'ChiTietDonHang',
     tableName: 'chitietdonhang',
+    timestamps: false,
   });
   return ChiTietDonHang;
 };

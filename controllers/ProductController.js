@@ -15,13 +15,6 @@ export async function getProductById(req, res) {
 }
 
 export async function insertProduct(req, res) {
-    // const { error } = InsertProducRequest.validate(req.body)
-    // if(error) {
-    //     return res.status(400).json({
-    //         message: "Them san pham that bai",
-    //         error: error.details[0]?.message,
-    //     });
-    // }
     try {
         // console.log(JSON.stringify(req.body))
         const product = await db.SanPham.create(req.body)

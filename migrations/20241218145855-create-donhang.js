@@ -17,8 +17,8 @@ module.exports = {
           key: 'CustomerID',
         },
       },
-      Total: {
-        type: Sequelize.INTEGER
+      Status: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

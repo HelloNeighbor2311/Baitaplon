@@ -38,9 +38,6 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      Stack: {
-        type: Sequelize.INTEGER
-      },
       Rate: {
         type: Sequelize.INTEGER
       },

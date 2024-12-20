@@ -10,6 +10,7 @@ import { AppRouter } from './WebRouter'
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
+
 AppRouter(app)
 const port = process?.env?.PORT ?? 3000 //Mac dinh post la 3000
 app.listen(process.env.PORT, () => {
