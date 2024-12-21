@@ -1,45 +1,45 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class SanPham extends Model {
+  class DichVu extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      SanPham.belongsTo(models.CuaHang, {
+      // define association here
+      DichVu.belongsTo(models.CuaHang, {
         foreignKey: "StoreID",
       });
-      SanPham.belongsTo(models.DanhMuc, {
+      DichVu.belongsTo(models.DanhMuc, {
         foreignKey: "CategoryID",
       });
-      SanPham.hasMany(models.ChiTietDonHang, {
-        foreignKey: "ProductID",
+      DichVu.hasMany(models.ChiTietDonHang, {
+        foreignKey: "ServiceID",
       });
     }
   }
-  SanPham.init(
+  DichVu.init(
     {
-      ProductID: {
+      ServiceID: {
         type: DataTypes.INTEGER,
-        primaryKey: true, // Đặt ProductID làm khóa chính
-        autoIncrement: true, // Nếu bảng hỗ trợ auto-increment
+        primaryKey: true, // Khóa chính của bảng
+        autoIncrement: true,
       },
-      ProductName: DataTypes.STRING,
       StoreID: DataTypes.INTEGER,
       CategoryID: DataTypes.INTEGER,
-      Image: DataTypes.TEXT,
-      Quantity: DataTypes.INTEGER,
-      Price: DataTypes.INTEGER,
+      ServiceName: DataTypes.STRING,
+      ServicePrice: DataTypes.INTEGER,
       Rate: DataTypes.INTEGER,
       Description: DataTypes.STRING,
+      Image: DataTypes.TEXT,
     },
     {
       sequelize,
-      modelName: "SanPham",
-      tableName: "sanpham",
+      modelName: "DichVu",
+      tableName: "dichvu",
     }
   );
-  return SanPham;
+  return DichVu;
 };
