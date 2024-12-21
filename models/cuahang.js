@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class CuaHang extends Model {
     /**
@@ -10,33 +8,36 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      CuaHang.hasMany(models.SanPham,{
-        foreignKey: 'StoreID'
-      })
-      CuaHang.hasMany(models.ChiTietDonHang,{
-        foreignKey: 'StoreID'
-      })
-      CuaHang.hasMany(models.DichVu,{
-        foreignKey: 'StoreID'
-      })
+      CuaHang.hasMany(models.SanPham, {
+        foreignKey: "StoreID",
+      });
+      CuaHang.hasMany(models.ChiTietDonHang, {
+        foreignKey: "StoreID",
+      });
+      CuaHang.hasMany(models.DichVu, {
+        foreignKey: "StoreID",
+      });
     }
   }
-  CuaHang.init({
-    StoreID: {
-      type: DataTypes.INTEGER,
-      primaryKey: true, // Khóa chính của bảng
-      autoIncrement: true,
+  CuaHang.init(
+    {
+      StoreID: {
+        type: DataTypes.INTEGER,
+        primaryKey: true, // Khóa chính của bảng
+        autoIncrement: true,
+      },
+      StoreName: DataTypes.STRING,
+      Image: DataTypes.TEXT,
+      PhoneNumber: DataTypes.INTEGER,
+      StoreAddress: DataTypes.STRING,
+      Email: DataTypes.STRING,
     },
-    StoreName: DataTypes.STRING,
-    Image: DataTypes.TEXT,
-    PhoneNumber: DataTypes.INTEGER,
-    StoreAddress: DataTypes.STRING,
-    Email: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'CuaHang',
-    tableName: 'cuahang',
-    timestamps: false,
-  });
+    {
+      sequelize,
+      modelName: "CuaHang",
+      tableName: "cuahang",
+      timestamps: false,
+    }
+  );
   return CuaHang;
 };

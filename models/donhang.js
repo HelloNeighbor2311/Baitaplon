@@ -1,8 +1,6 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
-const { FOREIGNKEYS } = require('sequelize/lib/query-types');
+"use strict";
+const { Model } = require("sequelize");
+const { FOREIGNKEYS } = require("sequelize/lib/query-types");
 module.exports = (sequelize, DataTypes) => {
   class DonHang extends Model {
     /**
@@ -11,21 +9,30 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      DonHang.belongsTo(models.KhachHang,{
-          foreignKey: 'CustomerID'   
-        })
-      DonHang.hasMany(models.ChiTietDonHang,{
-        foreignKey: 'OrderID'
-      })
+      DonHang.belongsTo(models.KhachHang, {
+        foreignKey: "CustomerID",
+      });
+      DonHang.hasMany(models.ChiTietDonHang, {
+        foreignKey: "OrderID",
+      });
     }
   }
-  DonHang.init({
-    CustomerID: DataTypes.INTEGER,
-    Status: DataTypes.STRING,
-  }, {
-    sequelize,
-    modelName: 'DonHang',
-    tableName: 'donhang',
-  });
+  DonHang.init(
+    {
+      OrderID: {
+        type: DataTypes.INTEGER,
+        primaryKey: true, // Khóa chính của bảng
+        autoIncrement: true,
+      },
+      CustomerID: DataTypes.INTEGER,
+      Status: DataTypes.STRING,
+      PaymentMethod: DataTypes.STRING,
+    },
+    {
+      sequelize,
+      modelName: "DonHang",
+      tableName: "donhang",
+    }
+  );
   return DonHang;
 };

@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class DichVu extends Model {
     /**
@@ -11,34 +9,37 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      DichVu.belongsTo(models.CuaHang,{
-        foreignKey: 'StoreID'
-      })
-      DichVu.belongsTo(models.DanhMuc,{
-        foreignKey: 'CategoryID'
-      })
-      DichVu.hasMany(models.ChiTietDonHang,{
-        foreignKey: 'ServiceID'
-      })
+      DichVu.belongsTo(models.CuaHang, {
+        foreignKey: "StoreID",
+      });
+      DichVu.belongsTo(models.DanhMuc, {
+        foreignKey: "CategoryID",
+      });
+      DichVu.hasMany(models.ChiTietDonHang, {
+        foreignKey: "ServiceID",
+      });
     }
   }
-  DichVu.init({
-    ServiceID: {
-      type: DataTypes.INTEGER,
-      primaryKey: true, // Khóa chính của bảng
-      autoIncrement: true,
+  DichVu.init(
+    {
+      ServiceID: {
+        type: DataTypes.INTEGER,
+        primaryKey: true, // Khóa chính của bảng
+        autoIncrement: true,
+      },
+      StoreID: DataTypes.INTEGER,
+      CategoryID: DataTypes.INTEGER,
+      ServiceName: DataTypes.STRING,
+      ServicePrice: DataTypes.INTEGER,
+      Rate: DataTypes.INTEGER,
+      Description: DataTypes.STRING,
+      Image: DataTypes.TEXT,
     },
-    StoreID: DataTypes.INTEGER,
-    CategoryID: DataTypes.INTEGER,
-    ServiceName: DataTypes.STRING,
-    ServicePrice: DataTypes.INTEGER,
-    Rate: DataTypes.INTEGER,
-    Description: DataTypes.STRING,
-    Image: DataTypes.TEXT
-  }, {
-    sequelize,
-    modelName: 'DichVu',
-    tableName: 'dichvu'
-  });
+    {
+      sequelize,
+      modelName: "DichVu",
+      tableName: "dichvu",
+    }
+  );
   return DichVu;
 };
