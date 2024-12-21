@@ -501,7 +501,7 @@ body{
     cursor: pointer;
 }
 
-.food-item__btn-icon {
-    color: var(--white-color);
-    font-size: 2rem;
+.food-item__btn-text {
+    /* color: var(--white-color); */
+    font-size: 1.8rem;
 }

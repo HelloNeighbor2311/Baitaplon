@@ -506,7 +506,6 @@ body{
     cursor: pointer;
 }
 
-.toy-item__btn-icon {
-    color: var(--white-color);
-    font-size: 2rem;
+.toy-item__btn-text {
+    font-size: 1.8rem;
 }

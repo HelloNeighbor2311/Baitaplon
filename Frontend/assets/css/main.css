@@ -616,9 +616,9 @@
     cursor: pointer;
 }
 
-.products-item__btn-icon {
-    color: var(--white-color);
-    font-size: 2rem;
+.products-item__btn-text {
+    color: #000;
+    font-size: 1.8rem;
 }
 
 /* More button */

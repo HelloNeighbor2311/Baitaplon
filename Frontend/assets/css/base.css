@@ -26,6 +26,9 @@ html{
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+html:focus-within {
+    scroll-behavior: smooth;
+}
 
 .just-me-again-down-here-regular {
     font-family: "Just Me Again Down Here", cursive;
