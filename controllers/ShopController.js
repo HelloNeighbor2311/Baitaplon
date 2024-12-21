@@ -49,11 +49,19 @@ export async function getShopById(req, res) {
 }
 
 export async function insertShop(req, res) {
+<<<<<<< HEAD
   const cuahang = await db.CuaHang.create(req.body);
   res.status(201).json({
     message: "Them cua hang thanh cong",
     data: cuahang,
   });
+=======
+    const cuahang = await db.CuaHang.create(req.body)
+    res.status(201).json({
+        message: "Them cua hang thanh cong",
+        data: cuahang
+    })
+>>>>>>> 56f13e03e74e1dbf1499e7eb0d11de59014a69f2
 }
 
 export async function deleteShop(req, res) {

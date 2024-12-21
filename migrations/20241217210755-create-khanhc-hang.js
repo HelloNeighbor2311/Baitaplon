@@ -29,6 +29,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      CustomerAddress: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       PhoneNumber: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -44,6 +48,11 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
+<<<<<<< HEAD
     await queryInterface.dropTable("KhachHang");
   },
+=======
+    await queryInterface.dropTable('KhachHang');
+  }
+>>>>>>> 56f13e03e74e1dbf1499e7eb0d11de59014a69f2
 };

@@ -27,11 +27,19 @@ export async function getOrderDetailById(req, res) {
 }
 
 export async function insertOrderDetail(req, res) {
+<<<<<<< HEAD
   const service = await db.DichVu.create(req.body);
   return res.status(201).json({
     message: "Them dich vu thanh cong",
     data: service,
   });
+=======
+    const service = await db.DichVu.create(req.body)
+    return res.status(201).json({
+        message: "Them dich vu thanh cong",
+        data: service
+    })
+>>>>>>> 56f13e03e74e1dbf1499e7eb0d11de59014a69f2
 }
 
 export async function deleateOrderDetail(req, res) {

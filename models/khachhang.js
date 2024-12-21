@@ -13,22 +13,18 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
   }
-  KhachHang.init(
-    {
-      Email: DataTypes.STRING,
-      Password: DataTypes.STRING,
-      CustomerName: DataTypes.STRING,
-      Avatar: DataTypes.STRING,
-      CustomerAddress: DataTypes.STRING,
-      PhoneNumber: DataTypes.INTEGER,
-      RegisterDate: DataTypes.DATE,
-      UpdateDate: DataTypes.DATE,
-    },
-    {
-      sequelize,
-      modelName: "KhachHang",
-      tableName: "khachhang",
-    }
-  );
+  KhachHang.init({
+    Email: DataTypes.STRING,
+    Password: DataTypes.STRING,
+    CustomerName: DataTypes.STRING,
+    Avatar: DataTypes.STRING,
+    PhoneNumber: DataTypes.INTEGER,
+    RegisterDate: DataTypes.DATE,
+    UpdateDate: DataTypes.DATE
+  }, {
+    sequelize,
+    modelName: 'KhachHang',
+    tableName: 'khachhang',
+  });
   return KhachHang;
 };

@@ -53,11 +53,19 @@ export async function getProductById(req, res) {
 }
 
 export async function insertProduct(req, res) {
+<<<<<<< HEAD
   const sanpham = await db.SanPham.create(req.body);
   return res.status(201).json({
     message: "Them san pham thanh cong",
     data: sanpham,
   });
+=======
+    const product = await db.SanPham.create(req.body)
+    return res.status(201).json({
+        message: "Them san pham thanh cong",
+        data: product
+    })
+>>>>>>> 56f13e03e74e1dbf1499e7eb0d11de59014a69f2
 }
 
 export async function deleateProduct(req, res) {

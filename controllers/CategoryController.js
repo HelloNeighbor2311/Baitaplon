@@ -26,11 +26,19 @@ export async function getCategoryById(req, res) {
 }
 
 export async function insertCategory(req, res) {
+<<<<<<< HEAD
   const danhmuc = await db.DanhMuc.create(req.body);
   res.status(201).json({
     message: "Them danh muc thanh cong",
     data: danhmuc,
   });
+=======
+    const product = await db.DanhMuc.create(req.body)
+    res.status(201).json({
+        message: "Them danh muc thanh cong",
+        data: product
+    })
+>>>>>>> 56f13e03e74e1dbf1499e7eb0d11de59014a69f2
 }
 
 export async function deleateCategory(req, res) {
