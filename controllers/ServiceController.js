@@ -2,11 +2,37 @@
 import db from "../models";
 
 export async function getServices(req, res) {
-  const services = await db.DichVu.findAll(); 
-  return res.status(200).json({
-    message: "Lấy danh sách dịch vụ thành công",
-    data: services,
-  });
+  const { search = "", page = 1 } = req.query;
+    const pageSize = 5;
+    const offset = (page - 1) * pageSize;
+    let WhereClause = {};
+    if (search.trim() !== "") {
+      WhereClause = {
+        [Op.or]: [
+          { ServiceName: { [Op.like]: `%${search}%` } },
+          { Description: { [Op.like]: `%${search}%` } },
+        ],
+      };
+    }
+  
+    const [services, toatalServices] = await Promise.all([
+      db.DichVu.findAll({
+        where: WhereClause,
+        limit: pageSize,
+        offset: offset,
+      }),
+      db.DichVu.count({
+        where: WhereClause,
+      }),
+    ]);
+  
+    return res.status(200).json({
+      message: "Lấy dịch vụ thành công",
+      data: services,
+      currentPage: parseInt(page, 10),
+      totalPages: Math.ceil(toatalServices / pageSize),
+      toatalServices,
+    });
 }
 
 export async function getServiceById(req, res) {
@@ -54,6 +80,9 @@ export async function deleateService(req, res) {
 
 export async function updateService(req, res) {
   const serviceID = req.params.id;
+
+  console.log("req.params:", req.params);
+  console.log("ProductID:", serviceID);
   if (Object.keys(req.body).length === 0) {
     return res.status(400).json({
       message: "Dữ liệu cập nhật không được để trống",

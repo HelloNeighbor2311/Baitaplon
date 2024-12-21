@@ -29,21 +29,17 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      CustomerAddress: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
       PhoneNumber: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      RegisterDate: {
-        type: Sequelize.DATE,
+      createdAt: {
         allowNull: false,
+        type: Sequelize.DATE,
       },
-      UpdateDate: {
-        type: Sequelize.DATE,
+      updatedAt: {
         allowNull: false,
+        type: Sequelize.DATE,
       },
     });
   },

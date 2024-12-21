@@ -1,7 +1,6 @@
 import { Sequelize, where } from "sequelize";
 const { Op } = Sequelize;
 import db from "../models";
-import InsertProducRequest from "../DataTransferObjects/requests/products/InsertProducRequest";
 export async function getProduct(req, res) {
   // const products = await db.SanPham.findAll()
   const { search = "", page = 1 } = req.query;

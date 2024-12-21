@@ -20,6 +20,7 @@ module.exports = {
       CategoryID: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        defaultValue: 1,
         references: {
           model: "DanhMuc",
           key: "CategoryID",

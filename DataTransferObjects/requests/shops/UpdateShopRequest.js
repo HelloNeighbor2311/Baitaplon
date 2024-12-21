@@ -12,11 +12,11 @@ class UpdateShopRequest {
   static validate(data) {
     const schema = Joi.object({
       StoreID: Joi.number().integer().required(),
-      StoreName: Joi.string().required().optional,
-      Image: Joi.string().uri().allow("").optional,
-      PhoneNumber: Joi.number().integer().required().optional,
-      StoreAddress: Joi.string().required().optional,
-      Email: Joi.string().email().required().optional,
+      StoreName: Joi.string().required().optional(),
+      Image: Joi.string().uri().allow("").optional(),
+      PhoneNumber: Joi.number().integer().required().optional(),
+      StoreAddress: Joi.string().required().optional(),
+      Email: Joi.string().email().required().optional(),
     });
 
     return schema.validate(data);

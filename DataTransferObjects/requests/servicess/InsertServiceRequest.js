@@ -1,10 +1,8 @@
-
 import Joi, { required } from "joi";
 
 class InsertServiceRequest {
   constructor(data) {
-    this.ServiceID = data.ServiceID,
-    this.StoreID = data.StoreID;
+    (this.ServiceID = data.ServiceID), (this.StoreID = data.StoreID);
     this.CategoryID = data.CategoryID;
     this.ServiceName = data.ServiceName;
     this.ServicePrice = data.ServicePrice;
@@ -14,7 +12,7 @@ class InsertServiceRequest {
   }
   static validate(data) {
     const schema = Joi.object({
-      ServiceID: Joi.number().integer().required,
+      ServiceID: Joi.number().integer().required(),
       StoreID: Joi.number().integer().required(),
       CategoryID: Joi.number().integer().required(),
       ServiceName: Joi.string().required(),

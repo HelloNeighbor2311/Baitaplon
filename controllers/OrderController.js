@@ -26,11 +26,26 @@ export async function getOrderById(req, res) {
 }
 
 export async function insertOrder(req, res) {
+  const customerID = req.body.CustomerID;
+
+  const existCustomer = await db.KhachHang.findByPk(customerID);
+  if (!existCustomer) {
+    return res.status(404).json({
+      message: "Người dùng không tồn tại",
+    });
+  }
+
   const donhang = await db.DonHang.create(req.body);
-  return res.status(201).json({
-    message: "Thêm đơn hàng thành công",
-    data: donhang,
-  });
+  if (donhang) {
+    return res.status(201).json({
+      message: "Thêm đơn hàng thành công",
+      data: donhang,
+    });
+  } else {
+    res.status(400).json({
+      message: "Không thẻ thêm đơn hàng",
+    });
+  }
 }
 
 export async function deleteOrder(req, res) {

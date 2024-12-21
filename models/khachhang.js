@@ -14,13 +14,17 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   KhachHang.init({
+    CustomerID: {
+      type: DataTypes.INTEGER,
+      primaryKey: true, // Đặt ProductID làm khóa chính
+      autoIncrement: true, // Nếu bảng hỗ trợ auto-increment
+    },
     Email: DataTypes.STRING,
     Password: DataTypes.STRING,
     CustomerName: DataTypes.STRING,
     Avatar: DataTypes.STRING,
+    CustomerAddress: DataTypes.STRING,
     PhoneNumber: DataTypes.INTEGER,
-    RegisterDate: DataTypes.DATE,
-    UpdateDate: DataTypes.DATE
   }, {
     sequelize,
     modelName: 'KhachHang',
