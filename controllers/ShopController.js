@@ -24,7 +24,7 @@ export async function getShops(req, res) {
     }),
   ]);
 
-  return res.status(200).json({
+  return res.render('displayShop.ejs',{
     message: "Lấy cửa hàng thành công",
     data: stores,
     currentPage: parseInt(page, 10),

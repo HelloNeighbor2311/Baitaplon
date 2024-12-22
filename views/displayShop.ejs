@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        </style>
+</head>
+<body>
+    <table>
+        <tr>
+          <th>StoreID</th>
+          <th>StoreName</th>
+          <th>Image</th>
+          <th>PhoneNumber</th>
+          <th>StoreAddress</th>
+          <th>Email</th>
+        </tr>
+
+        <% for(let i=0; i< data.length; i++) { %>
+          <tr>
+            <td><%= data[i].StoreID %></td>
+            <td><%= data[i].StoreName%></td>
+            <td><%= data[i].Image%></td>
+            <td><%= data[i].PhoneNumber%></td>
+            <td><%= data[i].StoreAddress%></td>
+            <td><%= data[i].Email%></td>
+          </tr>
+        <% } %>
+      </table>
+</body>
+</html>

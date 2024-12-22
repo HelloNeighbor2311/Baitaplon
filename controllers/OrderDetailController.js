@@ -1,4 +1,4 @@
-import { Sequelize, where } from "sequelize";
+
 import db from "../models";
 
 export async function getOrderDetails(req, res) {

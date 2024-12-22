@@ -1,5 +1,5 @@
-import { Sequelize } from "sequelize";
-import db from "../models";
+
+import db from "../models/index";
 
 export async function getCategories(req, res) {
   const danhmuc = await db.DanhMuc.findAll();

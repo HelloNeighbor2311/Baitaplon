@@ -2,7 +2,6 @@ import Joi, { required } from "joi";
 
 class UpdateProducRequest {
   constructor(data) {
-    this.ProductID = data.ProductID;
     this.ProductName = data.ProductName;
     this.StoreID = data.StoreID;
     this.CategoryID = data.CategoryID;
@@ -14,7 +13,6 @@ class UpdateProducRequest {
   }
   static validate(data) {
     const schema = Joi.object({
-      ProductID: Joi.number().integer().required(),
       ProductName: Joi.string().required().optional(),
       StoreID: Joi.number().integer().required().optional(),
       CategoryID: Joi.number().integer().required().optional(),
