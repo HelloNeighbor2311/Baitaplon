@@ -1,4 +1,20 @@
 // script.js
+let payOverlay = document.getElementById('pay__overlay');
+let isShow = false;
+console.log(payOverlay.style.display);
+function showOverlay()
+{
+  if (!isShow)
+  {
+  payOverlay.style.display  = 'flex';
+  isShow = true;
+  } 
+  else
+  {
+  payOverlay.style.display  = 'none';
+  isShow = false;
+  }
+}
 
 // Tạo một hàm để xử lý logic tăng giảm cho từng quantity selector
 function createQuantitySelector(containerId) {
@@ -28,20 +44,3 @@ createQuantitySelector('quantity-selector-1');
 createQuantitySelector('quantity-selector-2');
 createQuantitySelector('quantity-selector-3');
 
-
-let payOverlay = document.getElementById('pay__overlay');
-let isShow = false;
-console.log(payOverlay.style.display);
-function showOverlay()
-{
-  if (!isShow)
-  {
-  payOverlay.style.display  = 'flex';
-  isShow = true;
-  } 
-  else
-  {
-  payOverlay.style.display  = 'none';
-  isShow = false;
-  }
-}
