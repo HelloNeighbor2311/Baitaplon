@@ -1,8 +1,6 @@
 import db from "../models/index"
-let getHomePage = async (req, res) => {
-    return res.render('homepage.ejs', {
-        data: JSON.stringify(data)
-    })
+let getHomePage =  (req, res) => {
+    return res.render('homepage.ejs');
 }
 
 let createRegisterPage = (req, res) => {

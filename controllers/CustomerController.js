@@ -13,10 +13,10 @@ export async function insertCustomer(req, res) {
       message: "Email đã tồn tại",
     });
   }
-  const hashedPassowrd = await argon2.hash(req.body.Password);
+  const hashedPassword = await argon2.hash(req.body.Password);
   const customer = await db.KhachHang.create({
     ...req.body,
-    Password: hashedPassowrd,
+    Password: hashedPassword,
   }); // Assuming the model is Customer
   if (customer) {
     return res.status(201).json({
@@ -26,7 +26,63 @@ export async function insertCustomer(req, res) {
   }
 }
 
-export async function updateCustomer(req, res) {
+export async function loginCustomer(req, res) {
+  const { Email, Password } = req.body;
+
+  // Kiểm tra nếu thiếu thông tin đăng nhập
+  if (!Email || !Password) {
+    return res.status(400).json({
+      message: "Email và mật khẩu không được để trống",
+    });
+  }
+
+    // Tìm khách hàng theo email
+    const customer = await db.KhachHang.findOne({
+      where: { Email },
+    });
+
+    // Nếu không tìm thấy người dùng
+    if (!customer) {
+      return res.status(404).json({
+        message: "Email hoặc mật khẩu không chính xác",
+      });
+    }
+
+    // Kiểm tra mật khẩu
+    const isPasswordValid = Password && await argon2.verify(customer.Password, Password);
+    if (!isPasswordValid) {
+      return res.status(401).json({
+        message: "Email hoặc mật khẩu không đúng",
+      });
+    }
+
+    // // Tạo token JWT nếu cần
+    // const token = jwt.sign(
+    //   {
+    //     id: customer.customerID,
+    //     email: customer.email,
+    //     name: customer.name,
+    //   },
+    //   process.env.JWT_SECRET,
+    //   { expiresIn: "1h" } // Thời gian sống của token
+    // );
+
+    // Trả về thông tin người dùng và token
+    return res.status(200).json({
+      message: "Đăng nhập thành công",
+      data: {
+        //token,
+        user: {
+          id: customer.CustomerID,
+          name: customer.CustomerName,
+          email: customer.Email,
+        },
+      },
+    });
+}
+
+
+export async function updateCustomer(req, res) {  
   const customerID = req.params.id;
 
   // Log kiểm tra giá trị req.params

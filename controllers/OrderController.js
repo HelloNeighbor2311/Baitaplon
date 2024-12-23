@@ -43,7 +43,7 @@ export async function insertOrder(req, res) {
     });
   } else {
     res.status(400).json({
-      message: "Không thẻ thêm đơn hàng",
+      message: "Không thể thêm đơn hàng",
     });
   }
 }

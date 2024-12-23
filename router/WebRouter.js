@@ -1,4 +1,5 @@
 import express from "express";
+
 import * as ProductController from "../controllers/ProductController";
 import * as CategoryController from "../controllers/CategoryController";
 import * as OrderController from "../controllers/OrderController";
@@ -6,21 +7,32 @@ import * as OrderDetailController from "../controllers/OrderDetailController";
 import * as ShopController from "../controllers/ShopController";
 import * as ServiceController from "../controllers/ServiceController";
 import * as CustomerController from "../controllers/CustomerController";
+
 import asyncHandler from "../middlewares/asyncHandler";
 import validate from "../middlewares/validate";
-import InsertProducRequest from "../DataTransferObjects/requests/products/InsertProducRequest";
+
 import InsertCategoryRequest from "../DataTransferObjects/requests/InsertCategoryRequest";
-import InsertOrderDetailRequest from "../DataTransferObjects/requests/InsertOrderDetailRequest";
+
 import InsertOrderRequest from "../DataTransferObjects/requests/Orders/InsertOrderRequest";
-import InsertShopRequest from "../DataTransferObjects/requests/shops/InsertShopRequest";
-import InsertServiceRequest from "../DataTransferObjects/requests/servicess/InsertServiceRequest";
-import UpdateProducRequest from "../DataTransferObjects/requests/products/UpdateProductRequest";
-import UpdateShopRequest from "../DataTransferObjects/requests/shops/UpdateShopRequest";
 import UpdateOrderRequest from "../DataTransferObjects/requests/Orders/UpdateOrderRequest";
+
+import InsertShopRequest from "../DataTransferObjects/requests/shops/InsertShopRequest";
+import UpdateShopRequest from "../DataTransferObjects/requests/shops/UpdateShopRequest";
+
+import InsertProducRequest from "../DataTransferObjects/requests/products/InsertProducRequest";
+import UpdateProducRequest from "../DataTransferObjects/requests/products/UpdateProductRequest";
+
+import InsertServiceRequest from "../DataTransferObjects/requests/servicess/InsertServiceRequest";
 import UpdateServiceRequest from "../DataTransferObjects/requests/servicess/UpdateServiceRequest";
+
+
 import InsertCustomerRequest from "../DataTransferObjects/requests/Customers/InsertCustomerRequest";
 import UpdateCustomerRequest from "../DataTransferObjects/requests/Customers/UpdateCustomerRequest";
-import UpdateOrderDetailRequest from "../DataTransferObjects/requests/UpdateODR";
+import LoginCustomerRequest from "../DataTransferObjects/requests/Customers/LoginCustomerRequest";
+
+import InsertOrderDetailRequest from "../DataTransferObjects/requests/ODR/InsertOrderDetailRequest";
+import UpdateOrderDetailRequest from "../DataTransferObjects/requests/ODR/UpdateODR";
+
 
 const router = express.Router();
 export function AppRouter(app) {
@@ -116,9 +128,14 @@ export function AppRouter(app) {
 
   //Customer router
   router.post(
-    "/customers",
+    "/register",
     validate(InsertCustomerRequest),
     asyncHandler(CustomerController.insertCustomer)
+  );
+  router.post(
+    "/login",
+    validate(LoginCustomerRequest),
+    asyncHandler(CustomerController.loginCustomer)
   );
   router.put(
     "/customers/:id",

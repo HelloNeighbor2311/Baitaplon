@@ -27,10 +27,10 @@ export async function getOrderDetailById(req, res) {
 }
 
 export async function insertOrderDetail(req, res) {
-  const service = await db.DichVu.create(req.body);
+  const orderDetails = await db.ChiTietDonHang.create(req.body);
   return res.status(201).json({
-    message: "Them dich vu thanh cong",
-    data: service,
+    message: "Them chi tiet don hang thanh cong",
+    data: orderDetails,
   });
 }
 

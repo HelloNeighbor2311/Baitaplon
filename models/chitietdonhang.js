@@ -24,6 +24,11 @@ module.exports = (sequelize, DataTypes) => {
   }
   ChiTietDonHang.init(
     {
+      OrderDetailID: {
+        type: DataTypes.INTEGER,
+        primaryKey: true, // Khóa chính của bảng
+        autoIncrement: true,
+      },
       OrderID: DataTypes.INTEGER,
       ProductID: DataTypes.INTEGER,
       StoreID: DataTypes.INTEGER,
