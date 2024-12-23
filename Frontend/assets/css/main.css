@@ -351,9 +351,6 @@
     background-color: #f5f5f5;
 }
 
-.app__content {
-    /* margin-top: 32px; */
-}
 
 /* Category */
 .category {
@@ -369,10 +366,6 @@
     font-weight: 500;
     display: flex;
     justify-content: center;
-}
-
-.category__item--fix {
-    
 }
 
 .category__item-link {
